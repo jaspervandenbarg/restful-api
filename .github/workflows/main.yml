@@ -1,7 +1,7 @@
 name: Builb Test and push
 on: [push]
 env:
-  IMAGE_NAME: devops-lab1-python-server
+  IMAGE_NAME: student_service
   REPO_NAME: jaspervandenbarg
 
 
@@ -15,7 +15,7 @@ jobs:
         docker build --tag $REPO_NAME/$IMAGE_NAME .
     - name: run docker
       run: |
-        docker run -d -e 8080:8080 -host=localhost $REPO_NAME/$IMAGE_NAME:latest && \
+        docker run -d -e 8080:8080 -host=172.17.0.2 $REPO_NAME/$IMAGE_NAME:latest && \
           docker ps && sleep 5
     - name: Run API Tests
       id: run-newman
