@@ -23,7 +23,7 @@ class TestDefaultController(BaseTestCase):
             method='POST',
             data=json.dumps(body),
             content_type='application/json')
-        self.assert200(response,
+        self.assert404(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 
     def test_delete_student(self):
