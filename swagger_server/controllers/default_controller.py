@@ -30,7 +30,7 @@ def delete_student(student_id):  # noqa: E501
     :param student_id: the uid
     :type student_id: float
 
-    :rtype: str
+    :rtype: float
     """
     return delete(student_id)
 
