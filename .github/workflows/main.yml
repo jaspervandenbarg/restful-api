@@ -24,7 +24,7 @@ jobs:
         collection: postman/collection.json
         environment: postman/environment.json
         reporters: cli
-        iterationCount: 1
+        iterationCount: 3
 
     - name: Output summary to console
       run: echo ${{ steps.run-newman.outputs.summary }}
